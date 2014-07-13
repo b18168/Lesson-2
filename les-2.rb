@@ -1,10 +1,16 @@
-def priem?(a)
-	if a % 2 >= 1 and a > 1 and a / a == 1 
-		puts "#{a} is not a prime number."
-	else
-		puts "#{a} is a prime number."
+def priem?(mogelijk_priem)
+	alles_eronder = (2...mogelijk_priem)
+	for getal_eronder in alles_eronder
+		if mogelijk_priem % getal_eronder == 0
+			puts "#{mogelijk_priem} is geen priemgetal! #{getal_eronder}"
+			return false
+		end
 	end
-	for loop 
+  puts "#{mogelijk_priem} is een priemgetal!"
+  return true
 end
 
-priem?(27)
+puts "Welk nummer moet ik bekijken?"
+num1 = gets.chomp.to_i
+
+priem?(num1)
